@@ -361,6 +361,67 @@ p { color: var(--texto-2); margin: 0 0 12px; }
   .screenshots { grid-template-columns: 1fr; }
 }
 
+/* ============== ARQUITECTURA EN RED ============== */
+.red-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.red-diagrama {
+  background: linear-gradient(135deg, #e8f3ec, #fef4d8);
+  border: 1px solid #d9e8df;
+  border-radius: var(--radio-lg);
+  padding: 24px;
+  box-shadow: var(--sombra);
+}
+.red-diagrama svg { width: 100%; height: auto; display: block; }
+.red-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.red-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.red-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--sombra);
+  border-color: var(--primario);
+}
+.red-card-icon {
+  width: 56px; height: 56px;
+  background: linear-gradient(135deg, #e8f3ec, #fef4d8);
+  border: 1px solid #d9e8df;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.red-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+  color: var(--primario);
+}
+.red-card p {
+  font-size: 14px;
+  margin: 0;
+  color: var(--texto-2);
+}
+
+@media (max-width: 960px) {
+  .red-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
 /* ============== PRICING ============== */
 .pricing-grid {
   display: grid;

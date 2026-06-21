@@ -17,6 +17,7 @@
       </a>
       <div class="nav-links">
         <a href="#funcionalidades">Funcionalidades</a>
+        <a href="#red">Cómo funciona</a>
         <a href="#capturas">Capturas</a>
         <a href="#precio">Precio</a>
         <a href="#contacto" class="btn btn-ghost">Contacto</a>
@@ -171,6 +172,120 @@
         <div class="screenshot-card">
           <div class="screenshot-placeholder">⏰ Pdte. revisar</div>
           <p>Aviso de reparaciones estancadas más de 2 días. Marca como revisada con tu nombre. Nada se queda olvidado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== ARQUITECTURA EN RED ============== -->
+  <section id="red" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Trabajo en red multi-tienda</span>
+        <h2>Tus tiendas conectadas, tus datos en tu casa</h2>
+        <p>Cada tienda tiene su propia base de datos local — sin depender de la nube. Los pedidos se comparten entre todas tus tiendas a través de una red privada cifrada (Tailscale). Si se va internet, sigues trabajando.</p>
+      </div>
+
+      <div class="red-grid">
+        <!-- Diagrama -->
+        <div class="red-diagrama">
+          <svg viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tres tiendas conectadas a una base de datos central de pedidos compartidos a través de Tailscale">
+            <defs>
+              <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a6b50"/>
+              </marker>
+              <marker id="flecha-dorado" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="#c89a35"/>
+              </marker>
+            </defs>
+
+            <!-- Tienda 1 -->
+            <g class="red-tienda">
+              <rect x="40" y="40" width="170" height="130" rx="14" fill="#fff" stroke="#1f4d3a" stroke-width="2"/>
+              <text x="125" y="78" text-anchor="middle" font-size="36">🏪</text>
+              <text x="125" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4d3a">Tienda 1</text>
+              <text x="125" y="135" text-anchor="middle" font-size="11" fill="#475569">Servidor local</text>
+              <text x="125" y="152" text-anchor="middle" font-size="11" fill="#475569">+ BD propia</text>
+            </g>
+
+            <!-- Tienda 2 (centro arriba) -->
+            <g class="red-tienda">
+              <rect x="275" y="40" width="170" height="130" rx="14" fill="#fff" stroke="#1f4d3a" stroke-width="2"/>
+              <text x="360" y="78" text-anchor="middle" font-size="36">🏪</text>
+              <text x="360" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4d3a">Tienda 2</text>
+              <text x="360" y="135" text-anchor="middle" font-size="11" fill="#475569">Servidor local</text>
+              <text x="360" y="152" text-anchor="middle" font-size="11" fill="#475569">+ BD propia</text>
+            </g>
+
+            <!-- Tienda 3 -->
+            <g class="red-tienda">
+              <rect x="510" y="40" width="170" height="130" rx="14" fill="#fff" stroke="#1f4d3a" stroke-width="2"/>
+              <text x="595" y="78" text-anchor="middle" font-size="36">🏪</text>
+              <text x="595" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4d3a">Tienda 3</text>
+              <text x="595" y="135" text-anchor="middle" font-size="11" fill="#475569">Servidor local</text>
+              <text x="595" y="152" text-anchor="middle" font-size="11" fill="#475569">+ BD propia</text>
+            </g>
+
+            <!-- Nube Tailscale -->
+            <g>
+              <ellipse cx="360" cy="280" rx="220" ry="40" fill="#fef4d8" stroke="#e8b547" stroke-width="2" stroke-dasharray="6 4"/>
+              <text x="360" y="276" text-anchor="middle" font-size="14" font-weight="700" fill="#c89a35">🔒 Red privada cifrada</text>
+              <text x="360" y="294" text-anchor="middle" font-size="11" fill="#92400e">Tailscale · sin abrir nada a internet</text>
+            </g>
+
+            <!-- Flechas verticales hacia la nube -->
+            <line x1="125" y1="170" x2="125" y2="248" stroke="#2a6b50" stroke-width="2" marker-end="url(#flecha)"/>
+            <line x1="360" y1="170" x2="360" y2="248" stroke="#2a6b50" stroke-width="2" marker-end="url(#flecha)"/>
+            <line x1="595" y1="170" x2="595" y2="248" stroke="#2a6b50" stroke-width="2" marker-end="url(#flecha)"/>
+
+            <!-- Flecha de la nube al servidor central -->
+            <line x1="360" y1="320" x2="360" y2="370" stroke="#c89a35" stroke-width="2" marker-end="url(#flecha-dorado)"/>
+
+            <!-- Pedidos compartidos -->
+            <g>
+              <rect x="220" y="370" width="280" height="80" rx="14" fill="#1f4d3a" stroke="#163729" stroke-width="2"/>
+              <text x="360" y="402" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">📦 Pedidos compartidos</text>
+              <text x="360" y="422" text-anchor="middle" font-size="11" fill="#e8b547">Una sola lista para todas tus tiendas</text>
+              <text x="360" y="438" text-anchor="middle" font-size="10" fill="#cbd5e1">Pides una pantalla → llega → la ven todas</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Cards de beneficios -->
+        <div class="red-beneficios">
+
+          <div class="red-card">
+            <div class="red-card-icon">🔒</div>
+            <div>
+              <h3>Tus datos en tu casa</h3>
+              <p>Cada tienda tiene su base de datos local. Sin nube de terceros, sin riesgo de fuga, sin cuotas mensuales que dependen de un servicio externo.</p>
+            </div>
+          </div>
+
+          <div class="red-card">
+            <div class="red-card-icon">⚡</div>
+            <div>
+              <h3>Funciona sin internet</h3>
+              <p>El trabajo del día a día va por la red local de la tienda. Si se cae internet, sigues dando de alta reparaciones, cobrando, imprimiendo etiquetas.</p>
+            </div>
+          </div>
+
+          <div class="red-card">
+            <div class="red-card-icon">🔗</div>
+            <div>
+              <h3>Pedidos compartidos</h3>
+              <p>Una sola lista de pedidos para todas tus tiendas. Si pides 3 pantallas y llegan, lo ven todos los técnicos al instante. Sin emails, sin llamadas.</p>
+            </div>
+          </div>
+
+          <div class="red-card">
+            <div class="red-card-icon">🛡️</div>
+            <div>
+              <h3>Conexión privada cifrada</h3>
+              <p>La conexión entre tiendas va por <strong>Tailscale</strong>, una red privada virtual cifrada. No abres puertos, no expones nada a internet público.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
