@@ -152,8 +152,26 @@ p { color: var(--texto-2); margin: 0 0 12px; }
 .nav-links a:hover { color: var(--primario); background: var(--fondo-2); }
 .nav-links .btn { padding: 10px 20px; font-size: 15px; }
 
-@media (max-width: 760px) {
-  .nav-links a:not(.btn) { display: none; }
+/* En tablet y móvil, el nav pasa a dos filas: logo arriba centrado,
+   botones debajo (con wrap si hace falta) y todo más compacto. */
+@media (max-width: 900px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .brand-logo { height: 72px; }
+  .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+  .nav-links .btn { padding: 8px 14px; font-size: 13px; }
+}
+@media (max-width: 480px) {
+  .brand-logo { height: 56px; }
+  .nav-links .btn { padding: 7px 12px; font-size: 12px; }
 }
 
 /* ============== HERO ============== */
