@@ -15,7 +15,10 @@
       <a href="#" class="brand">
         <img class="brand-logo" src="logo.jpg" alt="PC Box Expert's Center" />
       </a>
-      <div class="nav-links">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
         <a href="#funcionalidades" class="btn btn-acento">Funcionalidades</a>
         <a href="#red" class="btn btn-acento">Cómo funciona</a>
         <a href="#capturas" class="btn btn-acento">Capturas</a>
@@ -328,5 +331,27 @@
     </div>
   </footer>
 
+  <script>
+    // Menú hamburguesa móvil: abre/cierra al pulsar el botón y se cierra
+    // automáticamente al pulsar un enlace (para que al saltar a una sección no
+    // quede el menú desplegado encima).
+    (function () {
+      var btn = document.getElementById('nav-toggle');
+      var links = document.getElementById('nav-links');
+      if (!btn || !links) return;
+      btn.addEventListener('click', function () {
+        var abierto = links.classList.toggle('open');
+        btn.classList.toggle('open', abierto);
+        btn.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {
+          links.classList.remove('open');
+          btn.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
